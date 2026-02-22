@@ -62,11 +62,12 @@ According to the operation system (MacOS, Linux or Windows) it applies the corre
 To clear blocked IPs, run one of these commands:
 - MacOS: ``sudo pfctl -F all -f /etc/pf.conf``
 - Linux: ``sudo iptables -F``
-- Windows: Open ``Windows Defender Firewall with Advanced Security`` and remove the ``IDS_Block`` rules.
+- Windows: open ``Windows Defender Firewall with Advanced Security`` and remove the ``IDS_Block`` rules.
 
 ---
 
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
+
 
 
 
