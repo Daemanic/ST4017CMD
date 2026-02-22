@@ -45,7 +45,29 @@ For windows:
 
 ---
 
+# [?] Code Functionality
+
+**1. GUI Layer (IDS_GUI)**
+The interface is built with ``Tkinter``, using threaded approach. It ensures the window remains responsive while the code actively runs in the background.
+
+**2. Sniffing Engine (scapy)**
+The code utilizes sniff() function to capture live packets being transmitted and recieved. It extracts the ``Source IP`` and ``Packet Size`` for every incoming transmission. The detection logic followed behind is:
+- Large Packet Alert: flags any packet over 1500 bytes.
+- Flood Detection: if the last 100 packets are indentical in size, the system identifies it as a potential automated DoS/Flood attack.
+
+**3. Universal Mitigation (pfctl, iptables, netsh)**
+According to the operation system (MacOS, Linux or Windows) it applies the corresponding firewall commad. Once a flood is detected, it adds a temporary rule to block all incoming traffic from attacker's IP address.
+
+**Note: Maintainance & Reset:**
+To clear blocked IPs, run one of these commands:
+- MacOS: ``sudo pfctl -F all -f /etc/pf.conf``
+- Linux: ``sudo iptables -F``
+- Windows: Open ``Windows Defender Firewall with Advanced Security`` and remove the ``IDS_Block`` rules.
+
+---
+
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
+
 
 
 
