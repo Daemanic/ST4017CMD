@@ -34,7 +34,7 @@ Note: Tkinter might give an error saying ``tk`` or ``tkinter`` not found:
 
 # [?] Running the Program
 
-The script requires ``sudo``/administrative priviledges to sniff network packets, for it to work run:
+The script requires ``sudo`` / administrative priviledges to sniff network packets, for it to work run:
 ```bash
 sudo python3 ids.py
 ```
@@ -102,6 +102,7 @@ _Expected GUI-popup:_
 # 📨 Acknowledgement
 
 I would like to give credit to my professor, **Abhishek Bimali** Sir, for giving me an opportunity to do this project during the ``Introduction to Programming - ST4017CMD`` course. His teaching provided the foundation for handling libraries and generating GUI for the development of this security tool.
+
 
 
 
