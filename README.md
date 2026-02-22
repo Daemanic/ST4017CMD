@@ -16,13 +16,19 @@ cd ST4017CMD
 # Required Installation
 
 The Python code uses libraries such as Scapy for packet manipulation and Tkinter for UI generation. Ensure Python3 is installed and check for the libraries by running:
+Using pip:
 ```bash
 pip install scapy tk
 ```
+If gives ``command not found`` error, use this shortcut:
+```bash
+python3 -m pip instal scapy tk
+```
+
 Note: Tkinter might give an error saying tk or tkinter not found:
 - MacOS: usually has it pre-installed. If missing, use ``brew install python-tk``.
 - Linux: run ``sudo apt-get install python3-tk``.
-- Windows: re-run the python installer and proceed.
+- Windows: ``re-run`` the python installer and proceed.
 
 ---
 
@@ -40,3 +46,4 @@ For windows:
 ---
 
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
+
