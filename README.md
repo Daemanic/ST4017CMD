@@ -1,4 +1,4 @@
-# 🌐 Network Intrusion Detection System [IDS]
+# 🌐 Network Intrusion Detection System (IDS)
 
 It is a lightweight Python script with graphical user interface (GUI) designed to monitor any activity on the network traffic and automatically alerts about potential flood attacks and modify the firewall. By utilizing threading, the program maintains a responsive user interface while simultaneously performing deep packet inspection in the background, ensuring no high-spped traffic enters the network. The script mainly focuses on changing from passive observer to an active defender which makes the script a practical example of **Automated Incident Response**. 
 
@@ -46,6 +46,7 @@ For windows:
 ---
 
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
+
 
 
 
