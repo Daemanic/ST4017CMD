@@ -13,9 +13,9 @@ cd ST4017CMD
 ```
 ---
 
-# [?] Required Installation
+# [?] Dependencies Installation
 
-The Python code uses libraries such as Scapy for packet manipulation and Tkinter for UI generation. Ensure Python3 is installed and check for the libraries by running:
+The Python code uses libraries such as ``Scapy`` for packet manipulation and ``Tkinter`` for UI generation. Ensure Python3 is installed and check for the libraries by running:
 Using pip:
 ```bash
 pip install scapy tk
@@ -65,8 +65,19 @@ Note: To clear blocked IPs, run one of these commands:
 
 ---
 
+# [?] In-Depth Explanation
+
+---
+
+# [?] Appendix Image
+
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
 
+---
+
+# 🙏 Acknowledgement
+
+I would like to give credit to my professor, Abhishek Bimali Sir, for giving me an opportunity to do this project during the Introduction to Programming - ST4017CMD course. His teaching provided the foundation for handling libraries and generating GUI for the development of this security tool.
 
 
 
