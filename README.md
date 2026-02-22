@@ -6,7 +6,7 @@ It is a lightweight Python script with graphical user interface (GUI) designed t
 
 # [?] Cloning Repository
 
-To get local installation of the project, open terminal and run:
+To get local installation of the project, open ``terminal`` and ``run``:
 ```bash
 git clone https://github.com/Daemanic/ST4017CMD.git
 cd ST4017CMD
@@ -102,6 +102,7 @@ _Expected GUI-popup:_
 # 📨 Acknowledgement
 
 I would like to give credit to my professor, **Abhishek Bimali** Sir, for giving me an opportunity to do this project during the ``Introduction to Programming - ST4017CMD`` course. His teaching provided the foundation for handling libraries and generating GUI for the development of this security tool.
+
 
 
 
