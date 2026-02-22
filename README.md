@@ -25,7 +25,7 @@ If gives ``command not found`` error, use this shortcut:
 python3 -m pip instal scapy tk
 ```
 
-Note: Tkinter might give an error saying tk or tkinter not found:
+Note: Tkinter might give an error saying ``tk`` or ``tkinter`` not found:
 - MacOS: usually has it pre-installed. If missing, use ``brew install python-tk``.
 - Linux: run ``sudo apt-get install python3-tk``.
 - Windows: ``re-run`` the python installer and proceed.
@@ -46,4 +46,5 @@ For windows:
 ---
 
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
+
 
