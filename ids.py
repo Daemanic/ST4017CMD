@@ -42,13 +42,18 @@ class IDS_GUI:
     def block_ip_macos(self, ipadr):
         if ipadr in self.whitelist or ipadr.startswith("192.168."):
             return
+        system_os = platform.system()
         try:
-            rule = f'block drop in from {ipadr} to any'
-            command = f"echo '{rule}' | sudo pfctl -f -"
+            if system_os == "Darwin":
+                command = f"echo 'block drop in from {ipadr} to any' | sudo pfctl -f -"
+            elif system_os == "Linux":
+                command = f"sudo iptables -A INPUT -s {ipadr} -j DROP"
+            elif system_os == "Windows":
+                command = f"netsh advfirewall firewall add rule name='IDS_Block' dir=in action=block remoteip={ipadr}"
             subprocess.run(command, shell=True, check=True)
-            self.update_ui_log(f"[!] Block: firewall rule added - {ipadr}")
+            self.update_ui_log(f"[!] Blocked {ipadr} on {system_os}")
         except Exception as error:
-            self.update_ui_log(f"[!] Error: failed block {ipadr} - {error}")
+            self.update_ui_log(f"[!] Error blocking {ipadr}: {error}")
 
     def packet_callback(self, packet):
         if packet.haslayer(IP):
