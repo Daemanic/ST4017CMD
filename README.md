@@ -56,7 +56,7 @@ The code utilizes ``sniff()`` function to capture live packets being transmitted
 - Flood Detection: if the last ``100 packets`` are indentical in size, the system identifies it as a potential automated DoS/Flood attack.
 
 **3. Universal Mitigation (pfctl, iptables, netsh)**
-According to the operation system (``MacOS, Linux or Windows``) it applies the corresponding firewall commad. Once a flood is detected, it adds a temporary rule to block all incoming traffic from attacker's IP address.
+According to the operation system ``(MacOS, Linux or Windows)`` it applies the corresponding firewall commad. Once a flood is detected, it adds a temporary rule to block all incoming traffic from attacker's IP address.
 
 **Note: Maintainance & Reset:**
 To clear blocked IPs, run one of these commands:
@@ -67,6 +67,7 @@ To clear blocked IPs, run one of these commands:
 ---
 
 <img width="702" height="614" alt="image" src="https://github.com/user-attachments/assets/4000e52c-0c7a-4729-9ace-f314ee80ec15" />
+
 
 
 
