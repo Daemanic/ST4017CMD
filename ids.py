@@ -12,7 +12,7 @@ logging.basicConfig(filename="active.log", level=logging.INFO, format="%(asctime
 class IDS_GUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Aditya Shrestha - 250498")
+        self.root.title("ST4017CMD - 250498")
         self.root.geometry("700x580")
         self.root.configure(bg="#252525")
 
@@ -78,3 +78,4 @@ if __name__ == "__main__":
     app = IDS_GUI(root)
     threading.Thread(target=app.start_sniffing, daemon=True).start()
     root.mainloop()
+
