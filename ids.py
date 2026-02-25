@@ -78,4 +78,3 @@ if __name__ == "__main__":
     app = IDS_GUI(root)
     threading.Thread(target=app.start_sniffing, daemon=True).start()
     root.mainloop()
-
