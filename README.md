@@ -95,14 +95,14 @@ attack logs scoll by in real-time.
 # [?] Appendix Image
 _Expected GUI-popup:_
 
-<img width="865" height="710" alt="image" src="https://github.com/user-attachments/assets/245911db-5b41-4ce4-a79d-3cffc296535c" />
-
+<img width="830" height="480" alt="image" src="https://github.com/user-attachments/assets/2df11e1c-22af-49d2-97e9-77b9f8df3549" />
 
 ---
 
 # 📨 Acknowledgement
 
 I would like to give credit to my professor, **Abhishek Bimali** Sir, for giving me an opportunity to do this project during the ``Introduction to Programming - ST4017CMD`` course. His teaching provided the foundation for handling libraries and generating GUI for the development of this security tool.
+
 
 
 
