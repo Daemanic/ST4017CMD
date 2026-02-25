@@ -39,7 +39,7 @@ class IDS_GUI:
         self.log_display.configure(state='disabled')
         self.log_display.see(tk.END)
 
-    def block_ip_macos(self, ipadr):
+    def block_ip(self, ipadr):
         if ipadr in self.whitelist or ipadr.startswith("192.168."):
             return
         system_os = platform.system()
@@ -65,7 +65,7 @@ class IDS_GUI:
                 self.update_ui_log(f"[!] Large Packet: {packet_size} bytes - {ip_src}")
             if self.packet_count > 100 and len(set(self.packet_volume[-100:])) == 1:
                 self.update_ui_log(f"[!] Alert: flood detected - {ip_src}")
-                self.block_ip_macos(ip_src)
+                self.block_ip(ip_src)
 
     def start_sniffing(self):
         sniff(prn=self.packet_callback, store=0)
@@ -78,3 +78,4 @@ if __name__ == "__main__":
     app = IDS_GUI(root)
     threading.Thread(target=app.start_sniffing, daemon=True).start()
     root.mainloop()
+
