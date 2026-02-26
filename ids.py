@@ -5,6 +5,7 @@ from scapy.layers.inet import IP
 from scapy.all import sniff
 import logging
 import subprocess
+import platform
 import os
 
 logging.basicConfig(filename="active.log", level=logging.INFO, format="%(asctime)s - %(message)s")
@@ -43,6 +44,7 @@ class IDS_GUI:
         if ipadr in self.whitelist or ipadr.startswith("192.168."):
             return
         system_os = platform.system()
+        command = None
         try:
             if system_os == "Darwin":
                 command = f"echo 'block drop in from {ipadr} to any' | sudo pfctl -f -"
@@ -50,8 +52,11 @@ class IDS_GUI:
                 command = f"sudo iptables -A INPUT -s {ipadr} -j DROP"
             elif system_os == "Windows":
                 command = f"netsh advfirewall firewall add rule name='IDS_Block' dir=in action=block remoteip={ipadr}"
-            subprocess.run(command, shell=True, check=True)
-            self.update_ui_log(f"[!] Blocked {ipadr} on {system_os}")
+            if command:
+                subprocess.run(command, shell=True, check=True)
+                self.update_ui_log(f"[!] Blocked {ipadr} on {system_os}")
+            else:
+                self.update_ui_log(f"[?] OS {system_os} not supported for auto-blocking")
         except Exception as error:
             self.update_ui_log(f"[!] Error blocking {ipadr}: {error}")
 
@@ -78,4 +83,3 @@ if __name__ == "__main__":
     app = IDS_GUI(root)
     threading.Thread(target=app.start_sniffing, daemon=True).start()
     root.mainloop()
-
