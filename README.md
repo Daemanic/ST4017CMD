@@ -4,7 +4,7 @@ It is a lightweight Python script with graphical user interface (GUI) designed t
 
 ---
 
-# [?] Cloning Repository
+## [?] Cloning Repository
 
 To get local installation of the project, open ``terminal`` and ``run``:
 ```bash
@@ -13,7 +13,7 @@ cd ST4017CMD
 ```
 ---
 
-# [?] Dependencies Installation
+## [?] Dependencies Installation
 
 The Python code uses libraries such as ``Scapy`` for packet manipulation and ``Tkinter`` for UI generation. Ensure Python3 is installed and check for the libraries by running:
 Using pip:
@@ -32,7 +32,7 @@ Note: Tkinter might give an error saying ``tk`` or ``tkinter`` not found:
 
 ---
 
-# [?] Running the Program
+## [?] Running the Program
 
 The script requires ``sudo`` / administrative priviledges to sniff network packets, for it to work run:
 ```bash
@@ -45,7 +45,7 @@ For windows:
 
 ---
 
-# [?] Code Functionality
+## [?] Code Functionality
 
 **1. GUI Layer (IDS_GUI)**
 The interface is built with ``Tkinter``, using threaded approach. It ensures the window remains responsive while the code actively runs in the background.
@@ -67,7 +67,7 @@ Note: To clear blocked IPs, run one of these commands:
 
 ---
 
-# [?] In-Depth Explanation
+## [?] In-Depth Explanation
 
 **1. Threading Importance**
 The structure of the program depends on real-time response and threading does that:
@@ -94,16 +94,17 @@ attack logs scoll by in real-time.
 
 ---
 
-# [?] Appendix Image
+## [?] Appendix Image
 _Expected GUI-popup:_
 
 <img width="830" height="480" alt="image" src="https://github.com/user-attachments/assets/2df11e1c-22af-49d2-97e9-77b9f8df3549" />
 
 ---
 
-# 📨 Acknowledgement
+## 📨 Acknowledgement
 
 I would like to give credit to my professor, **Abhishek Bimali** Sir, for giving me an opportunity to do this project during the ``Introduction to Programming - ST4017CMD`` course. His teaching provided the foundation for handling libraries and generating GUI for the development of this security tool.
+
 
 
 
