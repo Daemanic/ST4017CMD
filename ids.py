@@ -31,7 +31,7 @@ class IDS_GUI:
 
         self.packet_volume = []
         self.packet_count = 0
-        self.whitelist = ["127.0.0.1", "8.8.8.8", "8.8.4.4"]
+        self.whitelist = ["127.0.0.1"]
 
     def update_ui_log(self, message):
         logging.warning(message)
@@ -40,8 +40,15 @@ class IDS_GUI:
         self.log_display.configure(state='disabled')
         self.log_display.see(tk.END)
 
+    def safe_ip(self, ipadr):
+        if ipadr in self.whitelist:
+            return True
+        if ipadr.startswith("192.168."):
+            return True
+        return False
+    
     def block_ip(self, ipadr):
-        if ipadr in self.whitelist or ipadr.startswith("192.168."):
+        if self.safe_ip(ipadr):
             return
         system_os = platform.system()
         command = None
@@ -63,6 +70,8 @@ class IDS_GUI:
     def packet_callback(self, packet):
         if packet.haslayer(IP):
             ip_src = packet[IP].src
+            if self.safe_ip(ip_src):
+                return
             packet_size = len(packet)
             self.packet_volume.append(packet_size)
             self.packet_count += 1
@@ -83,3 +92,4 @@ if __name__ == "__main__":
     app = IDS_GUI(root)
     threading.Thread(target=app.start_sniffing, daemon=True).start()
     root.mainloop()
+
