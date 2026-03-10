@@ -63,20 +63,16 @@ class IDS_GUI:
         command = None
         try:
             if system_os == "Darwin":
-                command = f"echo 'block drop from {ipadr} to any' | sudo pfctl -f -"
-
+                command = f"echo 'block drop from {ipadr} to any' | sudo pfctl -a idsblock -f -"
             elif system_os == "Linux":
                 command = f"sudo iptables -I INPUT -s {ipadr} -j DROP"
-
             elif system_os == "Windows":
                 command = f"netsh advfirewall firewall add rule name=IDS_Block_{ipadr} dir=in action=block remoteip={ipadr}"
-
             if command:
-                subprocess.run(command, shell=True)
+                subprocess.run(command, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
                 self.update_ui_log(f"[!] Blocked {ipadr} on {system_os}")
             else:
                 self.update_ui_log(f"[?] OS {system_os} not supported")
-
         except Exception as error:
             self.update_ui_log(f"[!] Error blocking {ipadr}: {error}")
 
@@ -90,7 +86,6 @@ class IDS_GUI:
             self.packet_count += 1
             if packet_size > 1500:
                 self.update_ui_log(f"[!] Large Packet: {packet_size} bytes - {ip_src}")
-
             if self.packet_count > 100:
                 recent = self.packet_volume[-100:]
                 if sum(recent) / len(recent) > 1000:
