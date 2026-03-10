@@ -61,7 +61,7 @@ The code utilizes ``sniff()`` function to capture live packets being transmitted
 According to the operation system ``(MacOS, Linux or Windows)`` it applies the corresponding firewall commad. Once a flood is detected, it adds a temporary rule to block all incoming traffic from attacker's IP address.
 
 Note: To clear blocked IPs, run one of these commands:
-- MacOS: ``sudo pfctl -F all -f /etc/pf.conf``
+- MacOS: ``sudo pfctl -a idsblock -F rules``
 - Linux: ``sudo iptables -F``
 - Windows: open ``Windows Defender Firewall with Advanced Security`` and remove the ``IDS_Block`` rules.
 
@@ -103,4 +103,5 @@ _Expected GUI-popup:(excluding local ip)_
 
 ## 📨 Acknowledgement
 I would like to give credit to my professor, **Abhishek Bimali** Sir, for giving me an opportunity to do this project during the ``Introduction to Programming - ST4017CMD`` course. His teaching provided the foundation for handling libraries and generating GUI for the development of this security tool.
+
 
